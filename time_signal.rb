@@ -30,7 +30,7 @@ message = case Time.now.hour
               '18時: お疲れ様です。業務時間は終了です。今日の振り返りをしましょう。'
           end
 
-Slack.chat_postMessage(text: message,
+Slack.chat_postMessage(text: "テスト",
                        channel: '#05zatsudan',
                        username: '時報bot',
                        icon_url: 'https://i.gyazo.com/763d65291a1bef993f7dac57ce7ec643.png'
