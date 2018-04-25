@@ -1,4 +1,4 @@
-# 毎日8時〜20時に実行
-every '0 8-20 * * 1-7' do
+# 平日9時〜18時に実行
+every '0 9-18 * * 1-5' do
   command '~/local_bots/time_signal.rb'
 end
