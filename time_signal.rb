@@ -3,7 +3,7 @@
 require "slack"
 
 Slack.configure do |config|
-  config.token = 'xoxp-15487817223-15487257361-49006720579-73582208dd'
+  config.token = 'xoxp-172951701027-173842403815-352138423553-ac5ca3fe8597e6319e0915b84c1b0389'
 end
 
 message = case Time.now.hour
@@ -20,7 +20,7 @@ message = case Time.now.hour
           end
 
 Slack.chat_postMessage(text: message,
-                       channel: '#time_signal',
+                       channel: '#05zatsudan',
                        username: '時報bot',
                        icon_url: 'https://i.gyazo.com/763d65291a1bef993f7dac57ce7ec643.png'
                       )
