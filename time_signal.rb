@@ -3,15 +3,14 @@
 require "rubygems"
 require "slack"
 
-SYSTEM_TZ=ENV["TZ"]
-ENV["TZ"]="Asia/Tokyo"
+tz=Time.now.localtime("+9:00")
 
 Slack.configure do |config|
   config.token = 'xoxp-172951701027-173842403815-352138423553-ac5ca3fe8597e6319e0915b84c1b0389'
 end
 
-if !Time.now.saturday? || !Time.now.sunday?
-  case Time.now.hour
+if !tz.saturday? || !tz.sunday?
+  case tz.hour
   when 9 then
     message = '9時: おはようございます！今日の目標を明確にしましょう！'
   when 10 then
@@ -30,13 +29,14 @@ if !Time.now.saturday? || !Time.now.sunday?
     message = '16時: 午後も3時間経過、今日の目標は達成できていますか？'
   when 17 then
     message = '17時: ここから切り替えて、さらにもうワンステップ先にいきましょう！'
-  when 18 then
+  when 20 then
     message = '18時: お疲れ様です。業務時間は終了です。今日の振り返りをしましょう。'
   end
+
+  Slack.chat_postMessage(text: message,
+                         channel: '#05zatsudan',
+                         username: '時報bot',
+                         icon_url: 'https://i.gyazo.com/763d65291a1bef993f7dac57ce7ec643.png'
+                        )
 end
 
-Slack.chat_postMessage(text: message,
-                       channel: '#05zatsudan',
-                       username: '時報bot',
-                       icon_url: 'https://i.gyazo.com/763d65291a1bef993f7dac57ce7ec643.png'
-                      )
