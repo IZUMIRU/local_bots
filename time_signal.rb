@@ -29,7 +29,7 @@ if !tz.saturday? && !tz.sunday?
     message = '16時: 午後も3時間経過、今日の目標は達成できていますか？'
   when 17 then
     message = '17時: ここから切り替えて、さらにもうワンステップ先にいきましょう！'
-  when 20 then
+  when 18 then
     message = '18時: お疲れ様です。業務時間は終了です。今日の振り返りをしましょう。'
   end
 
