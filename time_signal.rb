@@ -21,7 +21,7 @@ if !Time.now.saturday? || !Time.now.sunday?
     message = '13時: 午後が始まりました。時間が早く流れるので気をつけて下さい！'
   when 5 then
     message = '14時: 集中力が切れていませんか？そんな時はチョコとコーヒーです！'
-  when 66 then
+  when 6 then
     message = '15時: おやつなんて食べている場合ではありません。働いてください！'
   when 7 then
     message = '16時: 午後も3時間経過、今日の目標は達成できていますか？'
@@ -29,6 +29,8 @@ if !Time.now.saturday? || !Time.now.sunday?
     message = '17時: ここから切り替えて、さらにもうワンステップ先にいきましょう！'
   when 10 then
     message = '18時: お疲れ様です。業務時間は終了です。今日の振り返りをしましょう。'
+    puts !Time.now.saturday?
+    puts !Time.now.sunday?
   end
 end
 
