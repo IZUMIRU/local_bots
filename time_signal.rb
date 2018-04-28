@@ -3,7 +3,8 @@
 require "rubygems"
 require "slack"
 
-SYSTEM_TZ="Asia/Tokyo"
+SYSTEM_TZ=ENV["TZ"]
+ENV["TZ"]="Asia/Tokyo"
 
 Slack.configure do |config|
   config.token = 'xoxp-172951701027-173842403815-352138423553-ac5ca3fe8597e6319e0915b84c1b0389'
